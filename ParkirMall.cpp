@@ -2,7 +2,7 @@
 #include <vector>
 #include <ctime>
 #include <iomanip>
-#include <cstdlib> 
+#include <cstdlib> // untuk system("cls")
 using namespace std;
 
 #define MAKS_PARKIR 20
@@ -52,13 +52,13 @@ void tambahKendaraan() {
 
     for (int i = 0; i < jumlah; i++) {
         Mobil m;
-        Mobil* ptr = &m; 
+        Mobil* ptr = &m;
 
         cout << "\n-- Input Mobil ke-" << daftarMobil.size() + 1 << " --" << endl;
-        cout << "Plat mobil   : "; getline(cin, ptr->plat);
-        cout << "Merk mobil   : "; getline(cin, ptr->merk);
-        cout << "Warna mobil  : "; getline(cin, ptr->warna);
-        ptr->waktuMasuk = time(0);
+        cout << "Plat mobil   : "; getline(cin, (*ptr).plat);
+        cout << "Merk mobil   : "; getline(cin, (*ptr).merk);
+        cout << "Warna mobil  : "; getline(cin, (*ptr).warna);
+        (*ptr).waktuMasuk = time(0);
 
         daftarMobil.push_back(*ptr);
     }
